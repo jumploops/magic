@@ -2,7 +2,7 @@
 
 ## AI functions for Typescript
 
-Effortlessly transform Typescript function calls to utilize powerful external large language models (LLMs) like GPT-4 from OpenAI. Unleash the full potential of AI to magically generate results for your functions with this easy-to-use package.
+Magically generate results for your Typescript functions by utilizing large language models (LLMs) like GPT-4 from OpenAI. 
 
 > **Warning**
 >
@@ -15,13 +15,13 @@ Effortlessly transform Typescript function calls to utilize powerful external la
 
 ## Features
 
-- Seamlessly transform your TypeScript functions with a simple `@magic` comment
+- Seamlessly transform your TypeScript functions with a simple `//@magic` comment
 - Integrate the latest AI language models such as GPT-4 from OpenAI
 - Effortless setup with your existing TypeScript project
 
 ## Usage
 
-Transform your TypeScript functions by adding the `// @magic` comment.
+Transform your TypeScript functions by adding the `//@magic` comment.
 
 Here's an example function:
 
