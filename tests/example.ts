@@ -43,7 +43,7 @@ async function nonMagicAsyncFunction(name: string): Promise<Person> {
 
 // @ts-ignore 
 // @magic
-async function asyncFunction(): Promise<Person> {
+export async function asyncFunction(): Promise<Person> {
   //Return the first name of the 5th president and the last name of the 40th president
 }
 
@@ -53,7 +53,7 @@ interface Building {
 }
 
 // @magic
-async function asyncFunction2(): Promise<Building> {
+export async function asyncFunction2(): Promise<Building> {
   //How tall is the Eiffel tower?
   return { name: "Eiffel Tower", height: "?" }
 }
@@ -66,7 +66,7 @@ interface Structure {
 
 // @ts-ignore 
 // @magic
-async function asyncFunction3(): Promise<Structure> {
+export async function asyncFunction3(): Promise<Structure> {
   //How tall is a school bus?
 }
 
@@ -84,7 +84,3 @@ function plainFunction(name: string): Person {
   console.log(user);
   return user;
 }
-
-asyncFunction().then((value) => console.log(value)).catch((err) => console.error(err));
-asyncFunction2().then((value) => console.log(value)).catch((err) => console.error(err));
-asyncFunction3().then((value) => console.log(value)).catch((err) => console.error(err));

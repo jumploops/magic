@@ -1,4 +1,4 @@
-type BasketballPlayer = {
+export type BasketballPlayer = {
   name: string;
   position: 'Guard' | 'Forward' | 'Center';
   height: number;
@@ -6,12 +6,12 @@ type BasketballPlayer = {
   team: string;
 };
 
-type BasketballPlayersArray = BasketballPlayer[];
+export type BasketballPlayersArray = BasketballPlayer[];
 
 // @ts-ignore
 // @magic
-async function get(): Promise<BasketballPlayersArray> {
+export async function getTop5BasketBallPlayers(): Promise<BasketballPlayersArray> {
   //Return the top 5 baskeball players of all time
 }
 
-get().then((res) => console.log(res)).catch((err) => console.error(err));
+
