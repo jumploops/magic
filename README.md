@@ -18,6 +18,7 @@ Magically generate results for your Typescript functions by utilizing large lang
 - Seamlessly transform your TypeScript functions with a simple `//@magic` comment
 - Integrate the latest AI language models such as GPT-4 from OpenAI
 - Effortless setup with your existing TypeScript project
+- Automagically validate LLM responses against your Typescript interfaces
 
 ## Usage
 
