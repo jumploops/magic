@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "name": "@jumploops/magic",
   "devDependencies": {
     "@types/ajv": "^1.0.0",
@@ -11,7 +11,9 @@
     "typescript-json-schema": "0.55.0"
   },
   "scripts": {
-    "prepare": "ts-patch install -s"
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepare": "ts-patch install -s && npm run build"
   },
   "dependencies": {
     "ajv": "^8.12.0",
