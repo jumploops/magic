@@ -10,8 +10,7 @@ Magically generate results for your Typescript functions by utilizing large lang
 
 ## tl;dr
 
-<img width="709" alt="Screenshot 2023-04-01 at 12 30 42 AM" src="https://user-images.githubusercontent.com/8540079/229272667-eaf4ce30-14e9-48d2-b3c9-ba56bba961d8.png">
-
+![mountain](https://user-images.githubusercontent.com/8540079/230755440-09f76a42-6048-4784-b5f3-47dc767fff39.png)
 
 ## Features
 
