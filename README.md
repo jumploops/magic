@@ -69,10 +69,10 @@ export OPENAI_MODEL=gpt-4 #this step is optional
 
 ## Installation
 
-First, install `@jumploops/magic` as a development dependency using:
+First, install `@jumploops/magic` as a dependency using:
 
 ```bash
-npm install --save-dev @jumploops/magic
+npm install --save @jumploops/magic
 ```
 
 ### Setup with ts-patch
