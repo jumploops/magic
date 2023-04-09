@@ -35,7 +35,7 @@ async function asyncFunction(): Promise<Person> {
 }
 ```
 
-When this function is called, it'll leverage an AI language model like `GPT-3.5-turbo` and return the following result:
+When this function is called, it'll leverage an AI language model like `GPT-3.5-turbo` or `GPT-4` and return the following result:
 
 ```json
  { "firstName" : "James", "lastName" : "Reagan" }
@@ -52,7 +52,7 @@ When this function is called, it'll leverage an AI language model like `GPT-3.5-
 
 ## Prerequisites
 
-The OPENAI_API_KEY is required to access the OpenAI API. The OPENAI_MODEL environment variable allows you to optionally specify which model to use, and defaults to `gpt-3.5-turbo` if not set. 
+The `OPENAI_API_KEY` environment variable is required to access the OpenAI API. The `OPENAI_MODEL` environment variable allows you to optionally specify which model to use, and defaults to `gpt-3.5-turbo` if not set. 
 
 ```bash
 export OPENAI_API_KEY=your_api_key_here
