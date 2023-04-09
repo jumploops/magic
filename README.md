@@ -84,7 +84,7 @@ Now, add the plugin to your `tsconfig.json`:
 {
   "compilerOptions": {
     "plugins": [
-      { "transform": "@jumploops/magic/transformer", "type": "program" }
+      { "transform": "@jumploops/magic/transformer" }
     ]
   }
 }
@@ -103,7 +103,7 @@ Next, add the plugin to your `tsconfig.json`:
 {
   "compilerOptions": {
     "plugins": [
-      { "transform": "@jumploops/magic/transformer", "type": "program" }
+      { "transform": "@jumploops/magic/transformer" }
     ]
   }
 }
