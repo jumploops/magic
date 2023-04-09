@@ -16,7 +16,7 @@ Magically generate results for your Typescript functions by utilizing large lang
 
 This library uses a [Typescript transformer](https://github.com/itsdouges/typescript-transformer-handbook) to take the return type of a function, convert that type [into a JSON Schema](https://github.com/YousefED/typescript-json-schema), and then replace the function body with code to query the [OpenAI API](https://github.com/openai/openai-node) and [validate the response](https://github.com/ajv-validator/ajv) against the JSON Schema.
 
-This library doesn't write code for your functions, it allows you to use a LLM as a runtime.
+_This library doesn't write code for your functions, it allows you to use LLMs as a runtime._
 
 ## Features
 
