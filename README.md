@@ -10,8 +10,13 @@ Magically generate results for your Typescript functions by utilizing large lang
 
 ## tl;dr
 
-<img width="709" alt="Screenshot 2023-04-01 at 12 30 42 AM" src="https://user-images.githubusercontent.com/8540079/229272667-eaf4ce30-14e9-48d2-b3c9-ba56bba961d8.png">
+![mountain](https://user-images.githubusercontent.com/8540079/230755514-56193e38-019b-4a33-bd68-a0268fa0b787.png)
 
+## How does it work? 
+
+This library uses a [Typescript transformer](https://github.com/itsdouges/typescript-transformer-handbook) to take the return type of a function, convert that type [into a JSON Schema](https://github.com/YousefED/typescript-json-schema), and then replace the function body with code to query the [OpenAI API](https://github.com/openai/openai-node) and [validate the response](https://github.com/ajv-validator/ajv) against the JSON Schema.
+
+_This library doesn't write code for your functions, it allows you to use LLMs as a runtime._
 
 ## Features
 
@@ -27,32 +32,35 @@ Transform your TypeScript functions by adding the `//@magic` comment.
 Here's an example function:
 
 ```typescript
-import { Person } from './person';
-
 // @magic
-async function asyncFunction(): Promise<Person> {
-  //Return the first name of the 5th president and the last name of the 40th president
+async function example(): Promise<Mountain> {
+  //Return the 3rd highest mountain
 }
 ```
 
-When this function is called, it'll leverage an AI language model like `GPT-3.5-turbo` and return the following result:
+When this function is called, it'll leverage an AI language model like `GPT-4` and return the following result:
 
-```json
- { "firstName" : "James", "lastName" : "Reagan" }
+```typescript
+{ name: 'Kangchenjunga', height: { meters: 8586, feet: 28169 } }
 ```
 
-> Note: In this example, `Person` is defined as:
+> **Note**: In this example, `Mountain` is defined as:
 >
 > ```typescript
-> type Person {
->  firstName: string;
->  lastName: string;
+> interface Height {
+>   meters: number;
+>   feet: number;
+> }
+> 
+> interface Mountain {
+>   name: string;
+>   height: Height;
 > }
 > ```
 
 ## Prerequisites
 
-The OPENAI_API_KEY is required to access the OpenAI API. The OPENAI_MODEL environment variable allows you to optionally specify which model to use, and defaults to `gpt-3.5-turbo` if not set. 
+The `OPENAI_API_KEY` environment variable is required to access the OpenAI API. The `OPENAI_MODEL` environment variable allows you to optionally specify which model to use, and defaults to `gpt-3.5-turbo` if not set. 
 
 ```bash
 export OPENAI_API_KEY=your_api_key_here
@@ -79,7 +87,7 @@ Now, add the plugin to your `tsconfig.json`:
 {
   "compilerOptions": {
     "plugins": [
-      { "transform": "@jumploops/magic/transformer", "type": "program" }
+      { "transform": "@jumploops/magic/transformer" }
     ]
   }
 }
@@ -98,7 +106,7 @@ Next, add the plugin to your `tsconfig.json`:
 {
   "compilerOptions": {
     "plugins": [
-      { "transform": "@jumploops/magic/transformer", "type": "program" }
+      { "transform": "@jumploops/magic/transformer" }
     ]
   }
 }
@@ -120,8 +128,8 @@ Example:
 
 ```typescript
 // @magic
-async function asyncFunction(): Promise<Person> {
-  //Return the first name of the 5th president and the last name of the 40th president
+async function example(): Promise<Mountain> {
+  //Return the 3rd highest mountain
 }
 ```
 
