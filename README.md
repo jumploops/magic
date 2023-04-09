@@ -12,6 +12,12 @@ Magically generate results for your Typescript functions by utilizing large lang
 
 ![mountain](https://user-images.githubusercontent.com/8540079/230755514-56193e38-019b-4a33-bd68-a0268fa0b787.png)
 
+## How does it work? 
+
+This library uses a [Typescript transformer](https://github.com/itsdouges/typescript-transformer-handbook) to take the return type of a function, convert that type [into a JSON Schema](https://github.com/YousefED/typescript-json-schema), and then replace the function body with code to query the [OpenAI API](https://github.com/openai/openai-node) and [validate the response](https://github.com/ajv-validator/ajv) against the JSON Schema.
+
+This library doesn't write code for your functions, it allows you to use a LLM as a runtime.
+
 ## Features
 
 - Seamlessly transform your TypeScript functions with a simple `//@magic` comment
