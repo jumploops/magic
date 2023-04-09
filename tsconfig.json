@@ -8,8 +8,7 @@
     "outDir": "./dist",
     "plugins": [
       {
-        "transform": "./transformer.ts",
-        "type": "program"
+        "transform": "./transformer.ts"
       }
     ]
   },

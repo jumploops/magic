@@ -60,6 +60,7 @@ export async function fetchCompletion(existingFunction: string, { schema }: { sc
     return;
   }
 
+  process.env.DEBUG && console.log(completion.data.choices[0].message)
   const response = JSON.parse(completion.data.choices[0].message.content);
 
   if (!validateAPIResponse(response, JSON.parse(schema))) {

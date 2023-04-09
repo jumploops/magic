@@ -47,9 +47,38 @@ export async function asyncFunction3(): Promise<Structure> {
   //How tall is a school bus?
 }
 
-getTop5BasketBallPlayers().then((res) => console.log(res)).catch((err) => console.error(err));
-getCars().then((result) => console.log(result));
+interface Height {
+  meters: number;
+  feet: number;
+}
 
-asyncFunction().then((value) => console.log(value)).catch((err) => console.error(err));
-asyncFunction2().then((value) => console.log(value)).catch((err) => console.error(err));
-asyncFunction3().then((value) => console.log(value)).catch((err) => console.error(err));
+interface Mountain {
+  name: string;
+  height: Height;
+}
+
+// @ts-ignore 
+// @magic
+export async function asyncFunction4(): Promise<Mountain> {
+  //Return the 3rd highest mountain
+}
+
+interface Peak {
+  name: string;
+  height: string;
+}
+
+// @ts-ignore 
+// @magic
+export async function asyncFunction5(): Promise<Peak> {
+  //Return the 3rd highest peak 
+}
+
+//getTop5BasketBallPlayers().then((res) => console.log(res)).catch((err) => console.error(err));
+//getCars().then((result) => console.log(result));
+
+//asyncFunction().then((value) => console.log(value)).catch((err) => console.error(err));
+//asyncFunction2().then((value) => console.log(value)).catch((err) => console.error(err));
+//asyncFunction3().then((value) => console.log(value)).catch((err) => console.error(err));
+//asyncFunction4().then((value) => console.log(value)).catch((err) => console.error(err));
+asyncFunction5().then((value) => console.log(value)).catch((err) => console.error(err));
