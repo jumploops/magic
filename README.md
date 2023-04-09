@@ -32,26 +32,29 @@ Transform your TypeScript functions by adding the `//@magic` comment.
 Here's an example function:
 
 ```typescript
-import { Person } from './person';
-
 // @magic
-async function asyncFunction(): Promise<Person> {
-  //Return the first name of the 5th president and the last name of the 40th president
+async function example(): Promise<Mountain> {
+  //Return the 3rd highest mountain
 }
 ```
 
-When this function is called, it'll leverage an AI language model like `GPT-3.5-turbo` or `GPT-4` and return the following result:
+When this function is called, it'll leverage an AI language model like `GPT-4` and return the following result:
 
-```json
- { "firstName" : "James", "lastName" : "Reagan" }
+```typescript
+{ name: 'Kangchenjunga', height: { meters: 8586, feet: 28169 } }
 ```
 
-> Note: In this example, `Person` is defined as:
+> **Note**: In this example, `Mountain` is defined as:
 >
 > ```typescript
-> type Person {
->  firstName: string;
->  lastName: string;
+> interface Height {
+>   meters: number;
+>   feet: number;
+> }
+> 
+> interface Mountain {
+>   name: string;
+>   height: Height;
 > }
 > ```
 
@@ -125,8 +128,8 @@ Example:
 
 ```typescript
 // @magic
-async function asyncFunction(): Promise<Person> {
-  //Return the first name of the 5th president and the last name of the 40th president
+async function example(): Promise<Mountain> {
+  //Return the 3rd highest mountain
 }
 ```
 
