@@ -50,6 +50,15 @@ When this function is called, it'll leverage an AI language model like `GPT-3.5-
 > }
 > ```
 
+## Prerequisites
+
+The OPENAI_API_KEY is required to access the OpenAI API. The OPENAI_MODEL environment variable allows you to optionally specify which model to use, and defaults to `gpt-3.5-turbo` if not set. 
+
+```bash
+export OPENAI_API_KEY=your_api_key_here
+export OPENAI_MODEL=gpt-4 #this step is optional
+```
+
 ## Installation
 
 First, install `@jumploops/magic` as a development dependency using:

@@ -21,6 +21,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
-    "prepare": "ts-patch install -s && npm run build"
+    "prepare": "ts-patch install -s && npm run build",
+    "test": "jest"
   }
 }

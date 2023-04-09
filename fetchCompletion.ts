@@ -52,7 +52,7 @@ export async function fetchCompletion(existingFunction: string, { schema }: { sc
 
   try {
     completion = await openai.createChatCompletion({
-      model: 'gpt-3.5-turbo',
+      model: process.env.OPENAI_MODEL ? process.env.OPENAI_MODEL : 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: prompt }],
     });
   } catch (err) {
