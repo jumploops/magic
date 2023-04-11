@@ -18,13 +18,6 @@ This library uses a [Typescript transformer](https://github.com/itsdouges/typesc
 
 _This library doesn't write code for your functions, it allows you to use LLMs as a runtime._
 
-## Features
-
-- Seamlessly transform your TypeScript functions with a simple `//@magic` comment
-- Integrate the latest AI language models such as GPT-4 from OpenAI
-- Effortless setup with your existing TypeScript project
-- Automagically validate LLM responses against your Typescript interfaces
-
 ## Usage
 
 Transform your TypeScript functions by adding the `//@magic` comment.
