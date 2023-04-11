@@ -2,24 +2,24 @@
 
 ## AI functions for Typescript
 
-Magically generate results for your Typescript functions by utilizing large language models (LLMs) like GPT-4 from OpenAI. 
-
-> **Warning**
->
-> The code in this repository (including this README) was created with GPT-4. This is not a production repository and caution should be used when running this code. 
+Magically run typesafe functions by utilizing large language models (LLMs) as a runtime. 
 
 ## tl;dr
 
 <img src="https://user-images.githubusercontent.com/8540079/230755514-56193e38-019b-4a33-bd68-a0268fa0b787.png" width="600">
 
+> **Warning**
+>
+> The code in this repository (including this README) was created with GPT-4. This is not a production repository and caution should be used when running this code. 
 
-## How does it work? 
+### How does it work? 
 
 This library uses a [Typescript transformer](https://github.com/itsdouges/typescript-transformer-handbook) to take the return type of a function, convert that type [into a JSON Schema](https://github.com/YousefED/typescript-json-schema), and then replace the function body with code to query the [OpenAI API](https://github.com/openai/openai-node) and [validate the response](https://github.com/ajv-validator/ajv) against the JSON Schema.
 
 _This library doesn't write code for your functions, it allows you to use LLMs as a runtime._
 
-## Usage
+
+<details><summary><h3>Usage </h3></summary>
 
 Transform your TypeScript functions by adding the `//@magic` comment.
 
@@ -52,25 +52,23 @@ When this function is called, it'll leverage an AI language model like `GPT-4` a
 > }
 > ```
 
-## Prerequisites
+</details>
 
-The `OPENAI_API_KEY` environment variable is required to access the OpenAI API. The `OPENAI_MODEL` environment variable allows you to optionally specify which model to use, and defaults to `gpt-3.5-turbo` if not set. 
+### Prerequisites 
 
 ```bash
 export OPENAI_API_KEY=your_api_key_here
-export OPENAI_MODEL=gpt-4 #this step is optional
+export OPENAI_MODEL=gpt-4 #optional
 ```
 
-## Installation
-
-First, install `@jumploops/magic` as a dependency using:
+### Installation
 
 ```bash
 npm install --save @jumploops/magic
 ```
 
-### Setup with ts-patch
-
+<details><summary><h4>Setup with `ts-patch`</h4></summary>
+ 
 ```bash
 npm install -D ts-patch
 ts-patch install
@@ -86,8 +84,9 @@ Now, add the plugin to your `tsconfig.json`:
   }
 }
 ```
+</details>
 
-### Setup with ttypescript
+<details><summary><h4>Setup with `ttypescript`</h4></summary>
 
 Install ttypescript:
 
@@ -112,20 +111,7 @@ Compile your project using ttypescript:
 ttsc
 ```
 
-## API Reference
-
-### @magic
-
-Use `//@magic` to annotate a TypeScript function that you want to transform into a call to an external LLM. The function should be async.
-
-Example:
-
-```typescript
-// @magic
-async function example(): Promise<Mountain> {
-  //Return the 3rd highest mountain
-}
-```
+</details>
 
 ## Prior Art
 This package took inspiration from [Marvin - build AI functions that use an LLM as a runtime](https://news.ycombinator.com/item?id=35366838)
